@@ -1,36 +1,19 @@
-import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import { collection, doc, getDoc, getDocs } from 'firebase/firestore'
-import { db } from './firebase/config'
 import { Route, Routes } from 'react-router-dom'
+import CotizationScreen from './modules/cotization/pages/Cotization/CotizationScreen'
+import { getRates } from './modules/cotization/redux/ratesSlice'
+import { useDispatch } from 'react-redux'
+import useRates from './modules/cotization/hooks/useRates'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const dispatch = useDispatch();
+  const { rates } = useRates();
 
-  useEffect(() => {
-    async function fetchPrestamype() {
-      // const ratesRef = collection(db, "rates");
-
-      // getDocs(ratesRef).then((resp) => {
-      //   console.log(resp.docs[0].id);
-      // })
-      // getDocs(ratesRef).then((resp) => {
-      //   console.log(resp.docs[0].data());
-      // })
-
-      const rates = await getDocs(collection(db, "rates"));
-      rates.forEach((doc) => {
-        console.log(doc.id, " => ", doc.data());
-      });
-    }
-    fetchPrestamype()
-  },[]);
+  dispatch(getRates(rates));
   return (
     <>
     <Routes>
-      <Route path='/' element= {<CotizationScreen/>}></Route>
+      <Route path='/' element= { <CotizationScreen ratesTotal= {rates} />}></Route>
     </Routes>
     </>
   )
