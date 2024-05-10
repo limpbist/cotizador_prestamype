@@ -7,38 +7,6 @@ body {
     padding: 0px;
     display: grid;
     grid-template-rows: 220px 400px 1fr;
-
-
-    /* background-color: #6E46E6; */
-    /* grid-template-areas:
-    "header header header"
-    "aside aside main"
-    "footer footer footer";
-
-    .home {
-        grid-area: header;
-    }
-    
-    .box {
-        grid-area: aside;
-    }
-    
-    .main {
-        grid-area: main;
-    }
-    
-    .footer {
-        grid-area:footer;
-    }
-
-    
-    }
-    @media (min-width:992px) {
-        grid-template-areas:
-        "header header header"
-        "aside aside main"
-        "footer footer footer";
-    } */
 }
 
 .header {
@@ -82,5 +50,4 @@ body {
         grid-column: 2/3;
         grid-row:2/3;
     }
-
 }

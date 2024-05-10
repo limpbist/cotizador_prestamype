@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
-    user:''
+    sale_price: '0.00',
+    purchase_price: '0.00'
 }
 
 export const ratesSlice = createSlice({
@@ -9,7 +10,8 @@ export const ratesSlice = createSlice({
     initialState,
     reducers: {
         getRates: (state, action) => {
-            state.user = action.payload
+            state.sale_price = action.payload['sale_price'];
+            state.purchase_price = action.payload['purchase_price'];
         }
     }
 })

@@ -1,9 +1,8 @@
 import FormComponent from '../../componentes/Form/FormComponent';
 import './CotizationScreen.css';
 
-function CotizationScreen({ratesTotal}:any) {
+function CotizationScreen() {
 
-    console.log('ratesTotal', ratesTotal)
     return(
         <section className="container">
             <header className='header'>

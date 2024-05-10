@@ -1,8 +1,9 @@
-import { Button } from '@mui/material';
+import { useSelector } from 'react-redux';
 import './FormComponent.css';
-import { SlRefresh } from "react-icons/sl";
 
-function FormComponent ({dataCotization}:any) {
+function FormComponent () {
+    const rates = useSelector((state:any) => state.user);
+    const {sale_price,purchase_price} = rates;
 
     const purchasePrice = () => {
         console.log('purchasePrice')
@@ -24,10 +25,10 @@ function FormComponent ({dataCotization}:any) {
         <div className="containerForm">
             <div className='price'>
             <button onClick={purchasePrice} className='purchasePrice'>
-                <p className='textButtonCardList'>Dolár venta 3.999</p>
+                <p className='textButtonCardList'>Dolár venta {purchase_price}</p>
             </button>
             <button onClick={salePrice} className='salePrice'>
-                <p className='textButtonCardList'>Dolár venta 3.999</p>
+                <p className='textButtonCardList'>Dolár venta {sale_price}</p>
             </button>
             </div>
             <div className='formPrice'>
