@@ -37,7 +37,8 @@ body {
     width: 100%;
     padding: 10px ;
     grid-column: 2/7;
-    grid-row:1/2;
+    grid-row:3/4;
+    color: black;
 }
 
 .inputDollar {
@@ -46,7 +47,8 @@ body {
     width: 100%;
     padding: 10px ;
     grid-column: 2/7;
-    grid-row:3/4;
+    grid-row:1/2;
+    color: black;
 }
 
 .buttonFooter {
@@ -71,6 +73,13 @@ body {
 }
 
 .purchasePrice {
+    background-color: GRAY;
+    grid-column: 2/3;
+    grid-row:2/3;
+    padding: 0px;
+}
+
+.purchasePriceDisabled {
     background-color: #fff;
     grid-column: 2/3;
     grid-row:2/3;
@@ -78,7 +87,14 @@ body {
 }
 
 .salePrice {
-    background-color: #fff;
+    background-color: gray;
+    grid-column: 5/6;
+    grid-row:2/3;
+    padding: 0px;
+}
+
+.salePriceDisabled {
+    background-color: #ffff;
     grid-column: 5/6;
     grid-row:2/3;
     padding: 0px;
