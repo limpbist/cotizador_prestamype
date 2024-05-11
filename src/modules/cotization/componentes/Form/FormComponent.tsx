@@ -8,7 +8,7 @@ function FormComponent () {
     const [activate,setActivate] = useState(true);
     const [activate2,setActivate2] = useState(false);
     //const purchasePriceActual = Number(purchase_price)
-    let [soles,setSoles] = useState(0);
+    let [soles, setSoles] = useState(0);
     //let [dolar,setDolar] = useState(0);
 
     const purchasePrice = () => {
@@ -41,18 +41,9 @@ function FormComponent () {
     }
 
     const onchangeHandler = (e:any) => {
-        //let valueSoles = setSoles(e.target.value);
-
-        calculo();
-        
-        //soles = (e.target.value*(purchase_price)).toString;
-        //setSoles(soles*Number(purchase_price));
-        // setDolar(dolar/Number(sale_price));
+        setSoles(e.target.value); 
     }
 
-    const calculo = () => {
-        return Number(soles) * Number(purchase_price);
-    }
     return (
         <div className="containerForm">
             <div className='price'>
