@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import './FormComponent.css';
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 
 function FormComponent () {
     const rates = useSelector((state:any) => state.user);
@@ -8,20 +8,17 @@ function FormComponent () {
     const [activate,setActivate] = useState(true);
     const [activate2,setActivate2] = useState(false);
 
-    const [soles, setSoles] = useState('');
-    const [dolar, setDolar] = useState('');
-
     const purchasePrice = () => {
         setActivate(true)
         setActivate2(false)
-        const purchasePrice = Number(purchase_price)
+        //const purchasePrice = Number(purchase_price)
 
       };
     
     const salePrice = () => {
         setActivate(false)
         setActivate2(true)
-        const salesPrice = Number(sale_price)
+        //const salesPrice = Number(sale_price)
       };
     
     const initOperation = () => {

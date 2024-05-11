@@ -4,8 +4,7 @@ import CotizationScreen from './modules/cotization/pages/Cotization/CotizationSc
 import useRates from './modules/cotization/hooks/useRates'
 
 function App() {
-
-  const { rates } = useRates();
+  useRates();
 
   return (
     <>
