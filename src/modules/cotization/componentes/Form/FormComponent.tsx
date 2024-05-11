@@ -7,12 +7,13 @@ function FormComponent () {
     const {sale_price,purchase_price} = rates;
     const [activate,setActivate] = useState(true);
     const [activate2,setActivate2] = useState(false);
+    const purchasePriceActual = Number(purchase_price)
+    let [soles,setSoles] = useState(0);
+    let [dolar,setDolar] = useState(0);
 
     const purchasePrice = () => {
         setActivate(true)
         setActivate2(false)
-        //const purchasePrice = Number(purchase_price)
-
       };
     
     const salePrice = () => {
@@ -40,9 +41,19 @@ function FormComponent () {
     }
 
     const onchangeHandler = (e:any) => {
-        console.log(e.target.value)
+        let valueSoles = setSoles(e.target.value);
+
+        calculo();
+        console.log('Number(purchase_price)',Number(purchase_price))
+        console.log('Numero Soles', soles)
+        
+        //soles = (e.target.value*(purchase_price)).toString;
         //setSoles(soles*Number(purchase_price));
         // setDolar(dolar/Number(sale_price));
+    }
+
+    const calculo = () => {
+        return Number(soles) * Number(purchase_price);
     }
     return (
         <div className="containerForm">
@@ -58,17 +69,7 @@ function FormComponent () {
             </div>
 
             <div className='formPrice'>
-                {/* <input 
-                className={activate ? 'inputDollar': 'inputSol'} 
-                type='number'
-                name = 'dolar' 
-                placeholder='Dolares'
-                value={value.soles}
-                onChange={onchangeHandler}
-                /> */}
-
-                <input 
-                className={activate ? 'inputDollar': 'inputSol'} 
+                <input className={activate ? 'inputDollar': 'inputSol'}
                 type='number'
                 onChange={onchangeHandler}
                 />
@@ -77,18 +78,10 @@ function FormComponent () {
                 <img src="Group 1370.svg"/>              
                 </button>
                 </div>
-                {/* <input 
-                className={activate2 ? 'inputDollar': 'inputSol'} 
-                type='number'
-                name = 'soles'  
-                placeholder='Soles'
-                value={dolar}  
-                onChange={onchangeHandler}
-                /> */}
-                <input 
-                className={activate2 ? 'inputDollar': 'inputSol'} 
-                type='number'
-                onChange={onchangeHandler}
+                <input className={activate2 ? 'inputDollar': 'inputSol'}
+                
+                type= 'number'
+                value = {soles * purchase_price}
                 />
             </div>
             <div className='buttonFooter'>
